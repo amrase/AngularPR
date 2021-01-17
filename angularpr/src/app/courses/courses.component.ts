@@ -9,7 +9,7 @@ import { CoursesService } from './courses.service';
 export class CoursesComponent implements OnInit {
 
   // isActive=true;
-  // title = "List of courses";
+   title = "List of courses";
    courses:any[];
   // imageUrl="";
 

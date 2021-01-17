@@ -1,3 +1,52 @@
-<h3>App Working</h3>
-<app-courses></app-courses>
-<app-authors></app-authors>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Add new Servers or blueprints!</p>
+        <label>Server Name</label>
+        <input type="text" class="form-control" [(ngModel)]="newServerName">
+        <label>Server Content</label>
+        <input type="text" class="form-control" [(ngModel)]="newServerContent">
+        <br>
+        <button
+          class="btn btn-primary"
+          (click)="onAddServer()">Add Server</button>
+        <button
+          class="btn btn-primary"
+          (click)="onAddBluePrint()">Add Server Blueprint</button>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12">
+        <div
+          class="panel panel-default"
+          *ngFor="let element of servers">
+          <div class="panel-heading">{{ element.name }}</div>
+          <div class="panel-body">
+            <p>
+              <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+              <em *ngIf="element.type === 'blueprint'" style="color:blue">{{ element.content }}</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>My Server</h2>
+        <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+        <ul class="list-group">
+            <li class="list-group-item"
+                *ngFor="let server of servers;let i=index"
+                (click)="onRemoveServer(i)"
+                >{{server}}
+            </li>
+        </ul>
+    </div>
+    </div>
+  </div>
+   -->

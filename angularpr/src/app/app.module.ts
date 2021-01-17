@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FormsModule } from '@angular/forms';
 import { AuthorsComponent } from './authors/authors.component';
+import { SummaryPipe } from './courses/summary.pipe';
+import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    AuthorsComponent
+    AuthorsComponent,
+    SummaryPipe,
+    FavoriteComponentComponent
   ],
   imports: [
     BrowserModule,
