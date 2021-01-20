@@ -8,9 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
 
   products = [
-    {"name":"Phone XL","desc":"A large phone with one of the best screens","price":750},
-    {"name":"Phone Mini","desc":"A great phone iwth one of the best cameras","price":700},
-    {"name":"Phone Standard","desc":"","price":1000}
+    { "id":1,"name":"Phone XL","desc":"A large phone with one of the best screens","price":750},
+    { "id":2,"name":"Phone Mini","desc":"A great phone iwth one of the best cameras","price":700},
+    { "id":3,"name":"Phone Standard","desc":"","price":1000}
   ]
 
   share(){
@@ -28,3 +28,5 @@ export class ProductListComponent implements OnInit {
   }
 
 }
+
+

@@ -9,8 +9,10 @@ import * as EventEmitter from 'events';
 export class ProductAlertComponent implements OnInit {
 
   @Input() product;
-  @Output() notify = new EventEmitter();
+ // @Output() notify = new EventEmitter();
   constructor() { }
+
+
 
   ngOnInit(): void {
   }
