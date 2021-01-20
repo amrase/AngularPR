@@ -1,5 +1,5 @@
 import { stringify } from '@angular/compiler/src/util';
-import { Component, OnInit, Output,EventEmitter, ViewChild  } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter, ViewChild, OnChanges, SimpleChanges  } from '@angular/core';
 
 
 @Component({
@@ -7,18 +7,27 @@ import { Component, OnInit, Output,EventEmitter, ViewChild  } from '@angular/cor
   templateUrl: './cockpit.component.html',
   styleUrls: ['./cockpit.component.css']
 })
-export class CockpitComponent implements OnInit {
+export class CockpitComponent implements OnInit,OnChanges {
 
   @Output() serverCreated = new EventEmitter<{serverName:string,serverContent:string}>();
   @Output() bluePrintCreated = new EventEmitter<{blueprintName:string,blueprintContent:string}>();
   //newServerName = '';
   //newServerContent = '';
   @ViewChild('serverContentInput') serverContentInput;
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() { 
+    console.log("constructoor called")
   }
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("ng onChanges called");
+    
+    console.log(changes);    
+  }
+
+ 
+  ngOnInit(): void {
+    console.log("ngOnit called")
+  }
+
 
   onAddServer(serverNameInput,serverContentInput) {
     this.serverCreated.emit({
