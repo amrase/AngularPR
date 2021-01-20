@@ -7,27 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   servers = [];
-  newServerName = '';
-  newServerContent = '';
 
-  onAddServer() {
+  onServerAdded(serverData : {serverName:string,serverContent:string}){
+    console.log(serverData);
+    
     this.servers.push({
-        type: 'server',
-        name : this.newServerName,
-        content : this.newServerContent
-      });
-  }
-
-  onAddBluePrint(){
-    this.servers.push({
-      type: 'blueprint',
-      name : this.newServerName,
-      content : this.newServerContent
+      type:'server',
+      name: serverData.serverName,
+      content : serverData.serverContent
     })
   }
 
-  onRemoveServer(id: number) {
-    const position = id;
-    this.servers.splice(position, 1);
+  onBlueprintAdded(blueprintData : {blueprintName:string,blueprintContent:string}){
+      this.servers.push({
+        type:'blueprint',
+        name: blueprintData.blueprintName,
+        content : blueprintData.blueprintContent
+    })
   }
+ 
 }

@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthorsComponent } from './authors/authors.component';
 import { SummaryPipe } from './courses/summary.pipe';
 import { FavoriteComponentComponent } from './favorite-component/favorite-component.component';
+import { CockpitComponent } from './cockpit/cockpit.component';
+import { ServerElementComponent } from './server-element/server-element.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FavoriteComponentComponent } from './favorite-component/favorite-compon
     CoursesComponent,
     AuthorsComponent,
     SummaryPipe,
-    FavoriteComponentComponent
+    FavoriteComponentComponent,
+    CockpitComponent,
+    ServerElementComponent
   ],
   imports: [
     BrowserModule,
